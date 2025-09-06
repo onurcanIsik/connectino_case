@@ -35,8 +35,6 @@ class NoteAddSheet extends HookConsumerWidget {
 
       try {
         final id = await apiNoti.saveData(title, content);
-        print("Saved with ID: $id");
-
         final note = NotesModel(
           id: id,
           title: title,
