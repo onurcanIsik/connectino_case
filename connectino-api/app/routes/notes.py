@@ -6,7 +6,6 @@ from datetime import datetime
 
 router = APIRouter()
 
-# In-memory fake DB: kullanıcı -> [notes]
 fake_notes: dict[str, list[dict]] = {}
 
 @router.get("/", response_model=list[dict])
@@ -18,7 +17,6 @@ def create_note(
     note: Note,
     uid: str = Depends(get_current_uid),
 ):
-    # kullanıcıya özel liste
     bucket = fake_notes.setdefault(uid, [])
     bucket.append(note.dict())
     return note
@@ -28,7 +26,6 @@ def update_note(note_id: str, note: Note, uid: str = Depends(get_current_uid)):
     bucket = fake_notes.get(uid, [])
     for i, n in enumerate(bucket):
         if n["id"] == note_id:
-            # id'yi path'ten al, noteden gelen id'yi ez
             note.id = note_id
             note.updated_at = datetime.utcnow()
             bucket[i] = note.dict()

@@ -2,8 +2,7 @@ from fastapi import Header, HTTPException, Depends
 import firebase_admin
 from firebase_admin import auth, credentials
 
-# Firebase init (bir kez)
-cred = credentials.Certificate("firebase-key.json")  # service account key
+cred = credentials.Certificate("firebase-key.json")  
 firebase_admin.initialize_app(cred)
 
 def get_current_uid(authorization: str = Header(...)):
