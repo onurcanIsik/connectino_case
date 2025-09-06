@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "111881476092",
+    "project_id": "connectino-3dd6a",
+    "storage_bucket": "connectino-3dd6a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:111881476092:android:90efecf1e22efd4b4c8479",
+        "android_client_info": {
+          "package_name": "com.example.connectino"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9A0vhH0mo8L37G6I5giEKV5Z7xIgLFJc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
